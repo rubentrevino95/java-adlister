@@ -2,7 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><%= "some title" %></title>
+    <title><%= "Landing page" %></title>
+    <style type="text/css"></style>
 </head>
 <body>
     <c:if test="true">
