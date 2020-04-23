@@ -1,15 +1,22 @@
+import java.io.*;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import javax.servlet.http.*;
 
-@WebServlet(name = "CounterServlet", urlPatterns = "/count")
+@WebServlet(name = "PageCounterServlet", urlPatterns = "/count")
+
 public class CounterServlet extends HttpServlet {
-    private int counter = 0;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        counter += 1;
-        response.getWriter().println("<h1>The count is " + counter + ".</h1>");
+    public static int count;
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        count++;
+
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<h1>This page has been viewed: " + count + "</h1>");
     }
+
+
 }
