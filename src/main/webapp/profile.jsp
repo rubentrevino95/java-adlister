@@ -11,8 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-    <%@ include file="partials/side-nav.jsp" %>
-    <%@ include file="partials/banner.jsp" %>
     <h1>Hello</h1>
 </body>
 </html>
