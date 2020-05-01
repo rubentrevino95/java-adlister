@@ -6,6 +6,10 @@ public class Ad {
     private String title;
     private String description;
 
+    public Ad() {
+
+    }
+
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
         this.userId = userId;
@@ -18,6 +22,7 @@ public class Ad {
         this.title = title;
         this.description = description;
     }
+
 
     public long getId() {
         return id;

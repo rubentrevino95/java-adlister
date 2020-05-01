@@ -24,7 +24,6 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-
     public Connection getConnection() {
         return this.connection;
     }
