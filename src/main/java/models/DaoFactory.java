@@ -5,6 +5,7 @@ import java.sql.SQLException;
 public class DaoFactory {
     private static Ads adsDao;
     private static User userDao;
+    private static Config config = new Config();
 
     public static Ads getAdsDao() throws SQLException {
         Config config = new Config();

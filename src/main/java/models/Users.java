@@ -3,7 +3,6 @@ package models;
 import java.util.List;
 
 public interface Users {
-
-    List<Ad> all();
-
+    User findByUsername(String username);
+    Long insert(User user);
 }

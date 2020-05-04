@@ -2,15 +2,21 @@ package models;
 
 public class User {
     private long id;
-    private long users;
+    private String username;
     private String email;
-    private String users_id;
+    private String password;
 
-    public User(long id, long users, String email, String users_id) {
+    public User(long id, String username, String email, String password) {
         this.id = id;
-        this.users = users;
+        this.username = username;
         this.email = email;
-        this.users_id = users_id;
+        this.password = password;
+    }
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
     }
 
     public long getId() {
@@ -21,12 +27,12 @@ public class User {
         this.id = id;
     }
 
-    public long getUsers() {
-        return users;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsers(long users) {
-        this.users = users;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -37,12 +43,12 @@ public class User {
         this.email = email;
     }
 
-    public String getUsers_id() {
-        return users_id;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUsers_id(String users_id) {
-        this.users_id = users_id;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
 

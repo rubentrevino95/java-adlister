@@ -2,6 +2,7 @@ package controllers;
 
 import models.Ad;
 import models.DaoFactory;
+import models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,8 +20,15 @@ public class CreateAdServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        // verify user is logged in
+        User user = (User) request.getSession().getAttribute("user");
+        if (user == null) {
+            response.sendRedirect("../login");
+            return;
+        }
+
         Ad ad = new Ad(
-            1, // for now we'll hardcode the user id
+            user.getId(),
             request.getParameter("title"),
             request.getParameter("description")
         );
